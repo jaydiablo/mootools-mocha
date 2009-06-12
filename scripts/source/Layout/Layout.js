@@ -402,7 +402,10 @@ MUI.Column = new Class({
 			'id': this.options.id,
 			'class': 'column expanded',
 			'styles': {
-				'width': options.placement == 'main' ? null : options.width
+				'width': options.placement == 'main' ? null : options.width,
+				'position': 'relative',	
+				'float': 'left',
+				'overflow': 'hidden' // Required by IE6
 			}
 		}).inject($(options.container));
 		
@@ -446,7 +449,10 @@ MUI.Column = new Class({
 			case 'left':
 				this.handleEl = new Element('div', {
 					'id': this.options.id + '_handle',
-					'class': 'columnHandle'
+					'class': 'columnHandle',
+					'styles': {
+						'overflow': 'hidden'
+					}					
 				}).inject(this.columnEl, 'after');
 
 				this.handleIconEl = new Element('div', {
@@ -670,7 +676,9 @@ MUI.Panel = new Class({
 			'id': this.options.id,
 			'class': 'panel expanded',
 			'styles': {
-				'height': options.height
+				'height': options.height,
+				'position': 'relative',
+				'overflow': 'auto'
 			}
 		}).inject(this.panelWrapperEl);
 		
@@ -698,7 +706,9 @@ MUI.Panel = new Class({
 			'id': this.options.id + '_header',
 			'class': 'panel-header',
 			'styles': {
-				'display': options.header ? 'block' : 'none'
+				'display': options.header ? 'block' : 'none',
+				'position': 'relative',
+				'overflow': 'hidden'
 			}
 		}).inject(this.panelEl, 'before');
 		
@@ -727,20 +737,28 @@ MUI.Panel = new Class({
 		}).inject(this.panelHeaderEl);
 		
 		this.titleEl = new Element('h2', {
-			'id': options.id + '_title'
+			'id': options.id + '_title',
+			'styles': {
+				'display': 'inline-block',
+				'overflow': 'hidden'
+			}			
 		}).inject(this.panelHeaderContentEl);
 		
 		this.handleEl = new Element('div', {
 			'id': options.id + '_handle',
 			'class': 'horizontalHandle',
 			'styles': {
-				'display': this.showHandle == true ? 'block' : 'none'
+				'display': this.showHandle == true ? 'block' : 'none',
+				'overflow': 'hidden'
 			}
 		}).inject(this.panelEl, 'after');
 		
 		this.handleIconEl = new Element('div', {
 			'id': options.id + '_handle_icon',
-			'class': 'handleIcon'
+			'class': 'handleIcon',
+			'styles': {
+				'overflow': 'hidden'
+			}			
 		}).inject(this.handleEl);		
 		
 		addResizeBottom(options.id);

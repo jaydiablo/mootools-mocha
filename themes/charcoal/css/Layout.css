@@ -229,19 +229,9 @@ li.divider {
 /* Panel Layout
 ---------------------------------------------------------------- */
 
-/* Columns */
-
-.column {
-	position: relative;	
-	float: left;
-	overflow: hidden; /* Required by IE6 */
-}
-
 /* Panels */
 
 .panel {
-	position: relative;
-	overflow: auto;
 	background: #303030;
 	border-bottom: 1px solid #282828;
 }
@@ -266,10 +256,8 @@ li.divider {
 }	
 
 .panel-header {
-	position: relative;	
 	background: #404040 url(../images/bg-panel-header.gif) repeat-x;
 	height: 30px;
-	overflow: hidden;
 	border-bottom: 1px solid #282828;		
 }
 
@@ -283,12 +271,10 @@ li.divider {
 }
 
 .panel-header h2 {
-	display: inline-block;
 	font-size: 12px;
 	margin: 0;
 	padding: 3px 8px 0 8px;
 	height: 22px;
-	overflow: hidden;
 	color: #B3D9FF;
 }
 
@@ -311,7 +297,6 @@ li.divider {
 	height: 4px;
 	line-height: 1px;
 	font-size: 1px;
-	overflow: hidden;
 	background: #404040 url(../images/bg-handle-horizontal.gif) repeat-x;
 }
 
@@ -324,7 +309,6 @@ li.divider {
 	height: 4px;
 	line-height: 1px;
 	font-size: 1px;
-	overflow: hidden;
 	background: url(../images/handle-icon-horizontal.gif) center center no-repeat;
 }
 
@@ -332,7 +316,6 @@ li.divider {
 	min-height: 10px;	
 	float: left;
 	width: 4px;
-	overflow: hidden;
 	background: #272727 url(../images/handle-icon.gif) center center no-repeat;
 	border: 1px solid #222;
 	border-top: 0;
